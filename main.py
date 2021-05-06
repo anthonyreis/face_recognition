@@ -1,7 +1,7 @@
 import cv2 as cv
 import os
 
-face_classifier = cv.CascadeClassifier('haarcascade_frontalface_alt.xml')
+face_classifier = cv.CascadeClassifier('HaarCascade/haarcascade_frontalface_alt.xml')
 
 dir = "document_images"
 
