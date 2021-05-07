@@ -1,5 +1,6 @@
 const {spawn} = require('child_process');
 
+
 const recognition = () => {
     const python = spawn('python3', ['main.py']);
 
