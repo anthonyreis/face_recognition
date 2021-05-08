@@ -7,14 +7,14 @@
 - Envie um base64 da imagem que se deseja reconhecer a face;
 - A API retornará um base64 da região da face reconhecida;
 
-## Exemplo Request:
+## Exemplo de Request:
 ```json
   {
 	"img": "data:image/png;base64,iVBORw0KGgo....."
   }
 ```
 
-## Exemplo Response:
+## Exemplo de Response:
 ```json
   {
     "data": {
