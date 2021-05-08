@@ -11,7 +11,7 @@ def faceRecognition():
 
     for (x, y, w, h) in face:
         cv.imwrite('resultImage.png', image[y:y + h, x:x + w])
-
+    
 def main():
     faceRecognition()
     

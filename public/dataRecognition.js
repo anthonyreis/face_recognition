@@ -1,22 +1,41 @@
-const {spawn} = require('child_process');
+const {spawnSync} = require('child_process');
 const {decode} = require('node-base64-image');
+const convertImg = require('./convertImg');
+const fs = require('fs');
 
-const dataRecognition = async (img) => {
-    try {
-        newImg = img.replace('data:image/png;base64,', '')
-        await decode(newImg, { fname: 'document', ext: 'png' });
+async function dataRecognition(img) {
+    const newImg = img.replace('data:image/png;base64,', '');
+    await decode(newImg, { fname: 'document', ext: 'png' });
 
-        const python = spawn('python3', ['public/cropFace.py'])
+    const child = spawnSync('python3', ['public/cropFace.py']);
 
-        python.stdout.on('data', (data) => {
-           return 'Success'
-        });
+    fs.unlink('document.png', err => {
+        if (err) {
+            return {
+                status_code: 500,
+                data: err,
+            }
+        }
+    })
 
-        python.stderr.on('data', (data) => {
-            return 'Fail'
-        });
-    } catch(err) {
-        console.log(err)
+    const base64Face = await convertImg();
+    
+    if(base64Face.status_code != 200) {
+        return base64Face;
+    }
+
+    fs.unlink('resultImage.png', err => {
+        if (err) {
+            return {
+                status_code: 500,
+                data: err,
+            }
+        }
+    })
+
+    return {
+        status_code: 200,
+        data: base64Face,
     }
     
 }

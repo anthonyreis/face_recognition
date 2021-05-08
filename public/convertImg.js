@@ -2,12 +2,18 @@ const { readFile } = require('fs/promises');
 
 const convertImg = async () => {
     try {
-        image = await readFile('resultImage.png');
-        b64_img = image.toString('base64')
-
-        return b64_img
+        const image = await readFile('resultImage.png');
+        const b64_img = image.toString('base64');
+       
+        return {
+            status_code: 200,
+            data: b64_img,
+        }
     } catch (err) {
-        console.error(err);
+        return {
+            status_code: 500,
+            data: err
+        }
     }
 }
 
