@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anthonyreis/ocr.git"
+    "url": "git+https://github.com/anthonyreis/face_recognition.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anthonyreis/ocr/issues"
+    "url": "https://github.com/anthonyreis/face_recognition/issues"
   },
-  "homepage": "https://github.com/anthonyreis/ocr#readme",
+  "homepage": "https://github.com/anthonyreis/face_recognition#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
