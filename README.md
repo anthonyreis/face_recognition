@@ -23,3 +23,9 @@
     }
   }
 ```
+## Exemplo de Imagens:
+## Imagem Original
+![Imagem Original](./old/original_images/image1.png)
+
+## Imagem Recortada
+![Recorte da Face](./old/result_images/resultimage1.png)
