@@ -10,7 +10,7 @@
 ## Exemplo de Request:
 ```json
   {
-	"img": "data:image/png;base64,iVBORw0KGgo....."
+	"img": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcIAAAFRCAIAAABoiDr/AANoK0lE....."
   }
 ```
 
@@ -19,7 +19,7 @@
   {
     "data": {
       "status_code": 200,
-      "data": "iVBORw0KGgoAAAANSUhEUgAAAFAAAABQ......."
+      "data": "iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAgAElEQVR4AaXBCdCuaVkg5nt7nu......."
     }
   }
 ```
