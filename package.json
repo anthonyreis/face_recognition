@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/anthonyreis/face_recognition#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "node-base64-image": "^2.0.3"

@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.post('/faceRecognition', async (req, res) => {
     const response = await dataRecognition(req.body['img']);
 
-    res.send({
-        status_code: response.status,
+    res.status(response.status_code).send({
+        status_code: response.status_code,
         data: response.data,
     })
 })
