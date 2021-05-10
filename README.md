@@ -17,7 +17,7 @@
 ## Exemplo de Request por base64:
 ```json
   {
-	  "img": "data:image/png;base64,iVBORw0KGgo....."
+	  "img": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcIAAAFRCAIAAABoiDr/AANoK0lE....."
   }
 ```
 
@@ -26,7 +26,14 @@
   {
     "data": {
       "status_code": 200,
-      "data": "iVBORw0KGgoAAAANSUhEUgAAAFAAAABQ......."
+      "data": "iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAgAElEQVR4AaXBCdCuaVkg5nt7nu......."
     }
   }
 ```
+## Exemplo de Imagens:
+
+## Imagem Original
+![Imagem Original](./old/original_images/image1.png)
+
+## Imagem Recortada
+![Recorte da Face](./old/result_images/resultimage1.png)
