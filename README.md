@@ -10,8 +10,7 @@
 ## Exemplo de Request por url:
 ```json
   {
-	"img": "https://prime.altubots.com/chats/rh/debugger/uploads/
-	7d8ba9c2-4408-d8b0-f508-c1b6828ed6c3/20210317182015998_alt.png"
+	"img": "https://i.imgur.com/xQ5wQmI.png"
   }
 ```
 
