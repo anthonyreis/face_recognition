@@ -1,46 +1,33 @@
-const {spawnSync} = require('child_process');
-const {decode} = require('node-base64-image');
-const convertImg = require('./convertImg');
-const {getImage} = require('./getImageByURL');
 const fs = require('fs');
+const { spawn } = require('child_process');
+const processImg = require('./processImg');
+const createImg = require('./createImg');
 
 const dataRecognition = async (img) => {
     try {
-        const newImg = img.includes('http') ? await getImage(img) : img.replace('data:image/png;base64,', '')
+        await createImg(img);
 
-        await decode(newImg, { fname: 'document', ext: 'png' });
+        const child = spawn('python', ['public/cropFace.py']);
 
-        const child = spawnSync('python3', ['public/cropFace.py']);
+        let error = '';
 
-        fs.unlink('document.png', err => {
-            if (err) {
-                return {
-                    status_code: 500,
-                    data: err,
-                }
-            }
-        })
-
-        const base64Face = await convertImg();
-        
-        if(base64Face.status_code != 200) {
-            return base64Face;
+        for await (const chunk of child.stderr) {
+            error += chunk;
         }
 
-        fs.unlink('resultImage.png', err => {
-            if (err) {
-                return {
-                    status_code: 500,
-                    data: err,
-                }
-            }
-        })
+        const exitCode = await new Promise((resolve, reject) => {
+            child.on('close', resolve);
+        });
 
-        return {
-            status_code: 200,
-            data: base64Face.data,
+        if (exitCode) {
+            return {
+                status_code: 500,
+                data: 'Houve um erro ao identificar a face.'
+            }
         }
-    } catch(err) {
+
+        return await processImg();
+    } catch (err) {
         return {
             status_code: 500,
             data: 'Houve um problema ao processar a sua requisição',
