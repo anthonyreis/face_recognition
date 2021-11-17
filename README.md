@@ -25,7 +25,6 @@
 ```json
   {
     "data": {
-      "status_code": 200,
       "data": "iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAgAElEQVR4AaXBCdCuaVkg5nt7nu......."
     }
   }
