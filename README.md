@@ -24,9 +24,7 @@
 ## Exemplo de Response:
 ```json
   {
-    "data": {
-      "data": "iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAgAElEQVR4AaXBCdCuaVkg5nt7nu......."
-    }
+    "data": "iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAIAAAABc2X6AAAgAElEQVR4AaXBCdCuaVkg5nt7nu......."
   }
 ```
 ## Exemplo de Imagens:
